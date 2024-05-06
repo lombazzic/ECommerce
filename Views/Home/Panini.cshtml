@@ -1,0 +1,99 @@
+@{
+    ViewData["Title"] = "Panini!";
+}
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panini Della Strefi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu-item {
+            margin-bottom: 30px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 20px;
+        }
+
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+
+        .menu-item img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        p {
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Panineria Della Stefy</h1>
+    </header>
+    <div class="container">
+        <div class="menu-item">
+            <img src="/img/hotdog.jpg" alt="Hotdog">
+            <h2>Hotdog</h2>
+            <p>Un classico americano - salsiccia, maionese, ketchup e senape in un morbido panino.</p>
+            <button onclick="addToCart('Hotdog')">Aggiungi al carrello</button>
+        </div>
+        <div class="menu-item">
+            <img src="/img/sandwich.jpg" alt="Sandwich">
+            <h2>Sandwich</h2>
+            <p>Un'esplosione di sapori - prosciutto, formaggio, lattuga, pomodoro e maionese su pane integrale.</p>
+            <button onclick="addToCart('Sandwich')">Aggiungi al carrello</button>
+        </div>
+        <div class="menu-item">
+            <img src="/img/hamburger.jpg" alt="Hamburger">
+            <h2>Hamburger</h2>
+            <p>Un classico intramontabile - succosa carne di manzo, formaggio, lattuga, pomodoro, cipolla e ketchup,
+                tutto su un panino ai semi di sesamo.</p>
+            <button onclick="addToCart('Hamburger')">Aggiungi al carrello</button>
+        </div>
+        <div class="menu-item">
+            <img src="/img/panino.jpg" alt="Panino Prosciutto Cotto">
+            <h2>Panino Prosciutto Cotto</h2>
+            <p>Panino classsico con prosciutto cotto, pomodoro, insalata e mozzarella</p>
+            <button onclick="addToCart('Panino Prosciutto Cotto')">Aggiungi al carrello</button>
+        </div>
+    </div>
+    <script>
+        function addToCart(productName) {
+            
+            console.log('Aggiunto al carrello:', productName);
+        }
+    </script>
+</body>
+
+</html>

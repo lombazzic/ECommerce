@@ -1,0 +1,87 @@
+﻿@using Microsoft.AspNetCore.Http;
+@inject IHttpContextAccessor HttpContextAccessor    
+@{
+    ViewData["Title"] = "Home Page";
+}
+<b>Login:</b> 
+@HttpContextAccessor?.HttpContext?.Session.GetString("login")
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panini Della Strefi</title>
+
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu-item {
+            margin-bottom: 30px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 20px;
+        }
+
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+
+        .menu-item img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        p {
+            color: #666;
+        }
+    </style>
+</head>
+
+<header id="home" style="background-color: #ffffff; color: #000000;">
+    <h1>Benvenuti alla Panineria Della Stefy</h1>
+    <p>Da generazioni, La Stefy è sinonimo di eccellenza nel mondo dei panini artigianali. La nostra storia inizia nel 2014, quando Stefania, la fondatrice, aprì la sua prima panineria nel cuore di Rimini.</p>
+    <p>Da allora, La Stefy è diventata una tappa obbligata per chiunque cerchi panini deliziosi, preparati con ingredienti freschi e di alta qualità. Abbiamo continuato a crescere e a innovare nel corso degli anni, mantenendo sempre fede alla nostra passione per il cibo genuino e gustoso.</p>
+</header>
+
+
+<section id="menu">
+    <h2>Il nostro Menu</h2>
+    <ul>
+        <li>Panino Classico</li>
+        <li>Hambruger</li>
+        <li>Hot-Dog</li>
+        <li>Sandwich</li>
+        <li>Bibite</li>
+
+    </ul>
+</section>
+
+
+
+
+
