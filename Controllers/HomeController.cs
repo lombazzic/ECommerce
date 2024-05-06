@@ -38,22 +38,26 @@ public class HomeController : Controller
         return View();
     }
     [HttpPost]
-    public IActionResult p1()
+    public IActionResult p1(Utente u)
     {
-        //Database db = new ();
+        Database db = new ();
+        if(u.Email != null)
+        {
+            HttpContext.Session.SetString("login", u.Email);
+        }
         string? login = HttpContext.Session.GetString("login");
-        //foreach(var item in db.Utenti)
-        //{
-            if(login=="sa")
+        foreach(var item in db.Utenti)
+        {
+            if(u.Email==item.Email)
             {
                 return View("Panini");
             }
-            /*else
+            else
             {
                 return View("Registrazione");
-            }*/
-        //}
-        return View("Index");
+            }
+        }
+        return View("");
     }
     [HttpPost]
     public IActionResult p2()
