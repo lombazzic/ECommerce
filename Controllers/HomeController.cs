@@ -48,16 +48,12 @@ public class HomeController : Controller
         string? login = HttpContext.Session.GetString("login");
         foreach(var item in db.Utenti)
         {
-            if(u.Email==item.Email)
+            if(u.Email==item.Email && u.Password==item.Password)
             {
                 return View("Panini");
             }
-            else
-            {
-                return View("Registrazione");
-            }
         }
-        return View("");
+        return View("Registrazione");
     }
     [HttpPost]
     public IActionResult p2()
@@ -73,13 +69,11 @@ public class HomeController : Controller
 
     public IActionResult Database()
     {
-        /*string? nomeUtente = HttpContext.Session.GetString("NomeUtente");
-        if (string.IsNullOrEmpty(nomeUtente))
-            return Redirect("\\home\\index");*/
         Database db = new ();
         db.SaveChanges();
         return View(db);
     }
+    [HttpPost, HttpGet]
     public IActionResult Registrazione(Utente u)
     {     
     
@@ -88,9 +82,10 @@ public class HomeController : Controller
             Database db = new ();   
             db.Utenti.Add(u);
             db.SaveChanges();
-            HttpContext.Session.SetString("NomeUtente", u.Nome);
+            //HttpContext.Session.SetString("NomeUtente", u.Nome);
+            return View ("Database", db);
         }
-        return View(u);
+        return View("Registrazione");
 
     }
     
