@@ -43,9 +43,10 @@ public class HomeController : Controller
         Database db = new ();
         if(u.Email != null)
         {
-            HttpContext.Session.SetString("login", u.Email);
+            HttpContext.Session.SetString("email", u.Email);
+            HttpContext.Session.SetString("password", u.Password);
+
         }
-        string? login = HttpContext.Session.GetString("login");
         foreach(var item in db.Utenti)
         {
             if(u.Email==item.Email && u.Password==item.Password)
@@ -58,7 +59,8 @@ public class HomeController : Controller
     [HttpPost]
     public IActionResult p2()
     {
-        HttpContext.Session.SetString("login", "-");
+        HttpContext.Session.Remove("email");
+        HttpContext.Session.Remove("password");
         return View("Index");
     }
 

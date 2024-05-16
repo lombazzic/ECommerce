@@ -1,7 +1,8 @@
 ﻿@using Microsoft.AspNetCore.Http;
 @inject IHttpContextAccessor HttpContextAccessor
 @{
-    string? valore = HttpContextAccessor?.HttpContext?.Session.GetString("login");
+    string? valore = HttpContextAccessor?.HttpContext?.Session.GetString("email");
+    string? valore1 = HttpContextAccessor?.HttpContext?.Session.GetString("password");
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -36,7 +37,7 @@
                         </li>
                         <li class="nav-item1"> 
                             @{
-                                if(valore != "login")
+                                if (string.IsNullOrWhiteSpace(valore) && string.IsNullOrWhiteSpace(valore2))
                                 {
                                     <a class="nav-link text-dark"  asp-controller="Home" asp-action="Login">Login</a>
                                 }
