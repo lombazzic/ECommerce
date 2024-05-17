@@ -1,7 +1,10 @@
 using System.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<databaseP>(options =>
+    options.UseSqlite(builder.Configuration.GetConnectionString("databaseP") ?? throw new InvalidOperationException("Connection string 'databaseP' not found.")));
 
 
 // Add services to the container.
