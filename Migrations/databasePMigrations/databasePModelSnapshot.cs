@@ -5,40 +5,32 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace cancellieri.andre.ecommerc.Migrations
+namespace cancellieri.andre.ecommerc.Migrations.databasePMigrations
 {
-    [DbContext(typeof(Database))]
-    partial class DatabaseModelSnapshot : ModelSnapshot
+    [DbContext(typeof(databaseP))]
+    partial class databasePModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.5");
 
-            modelBuilder.Entity("cancellieri.andre.ecommerc.Models.Utente", b =>
+            modelBuilder.Entity("Prodotti", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Cognome")
+                    b.Property<string>("NomeP")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Email")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Nome")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Password")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("data_nascita")
+                    b.Property<decimal>("PrezzoP")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Utenti");
+                    b.ToTable("Prodotti");
                 });
 #pragma warning restore 612, 618
         }
