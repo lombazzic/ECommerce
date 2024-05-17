@@ -9,6 +9,6 @@ public class Utente
     public string? Nome { get; set; }
     public string? Cognome { get; set; }
     public string? Email { get; set; }
-    public DateTime data_nascita { get; set; }
+    public string? data_nascita { get; set; }
     public string? Password { get; set; }
 }
