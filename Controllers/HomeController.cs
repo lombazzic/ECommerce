@@ -25,6 +25,7 @@ public class HomeController : Controller
        /* string? login = HttpContext.Session.GetString("login");
         if(login=="Samuele")
         {
+
             return View("Privacy");
         }*/
         return View();
@@ -63,6 +64,20 @@ public class HomeController : Controller
         HttpContext.Session.Remove("password");
         return View("Index");
     }
+    [HttpPost]
+    public IActionResult p3()
+    {
+        string cart = HttpContext.Session.GetString("cart");
+        int q=0;
+        if(cart != null)
+        {
+            q++;
+        }
+
+        return View("Index");
+    }
+
+
 
     public IActionResult Privacy()
     {

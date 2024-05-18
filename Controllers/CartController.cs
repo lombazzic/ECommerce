@@ -1,10 +1,12 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using cancellieri.andre.ecommerc.Models;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+
 
 namespace cancellieri.andre.ecommerc.Controllers
 {
@@ -52,15 +54,15 @@ namespace cancellieri.andre.ecommerc.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,NomeP,PrezzoP")] Prodotti Prodotti)
+        public async Task<IActionResult> Create([Bind("Id,NomeP,PrezzoP")] Prodotto Prodotti)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(prodotti);
+                _context.Add(Prodotti);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(prodotti);
+            return View(Prodotti);
         }
 
         // GET: Cart/Edit/5
@@ -84,7 +86,7 @@ namespace cancellieri.andre.ecommerc.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,NomeP,PrezzoP")] Prodotti prodotti)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,NomeP,PrezzoP")] Prodotto prodotti)
         {
             if (id != prodotti.Id)
             {

@@ -64,9 +64,12 @@
     <div class="container">
         <div class="menu-item">
             <img src="/img/hotdog.jpg" alt="Hotdog">
-            <h2>Hotdog</h2>
+            <h2>Hotdog-7€</h2>
+            
             <p>Un classico americano - salsiccia, maionese, ketchup e senape in un morbido panino.</p>
-            <button onclick="addToCart('Hotdog')">Aggiungi al carrello</button>
+            <form asp-action="p3">
+                <input type="submit" value="Aggiungi al Carrello">
+            </form>
         </div>
         <div class="menu-item">
             <img src="/img/sandwich.jpg" alt="Sandwich">
