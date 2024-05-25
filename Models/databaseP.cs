@@ -14,4 +14,5 @@ public class databaseP : DbContext
         }
 
         public DbSet<Prodotto> Prodotti { get; set; }
-    }
+
+}

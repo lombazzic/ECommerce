@@ -3,8 +3,7 @@
 @{
     ViewData["Title"] = "Home Page";
 }
-<b>Login:</b> 
-@HttpContextAccessor?.HttpContext?.Session.GetString("login")
+
 
 
 <head>
@@ -63,7 +62,9 @@
 </head>
 
 <header id="home" style="background-color: #ffffff; color: #000000;">
+    
     <h1>Benvenuti alla Panineria Della Stefy</h1>
+    <img src="/img/logo.png" alt="logo" style="width: 300px; height: 300px; margin: 15px;">
     <p>Da generazioni, La Stefy è sinonimo di eccellenza nel mondo dei panini artigianali. La nostra storia inizia nel 2014, quando Stefania, la fondatrice, aprì la sua prima panineria nel cuore di Rimini.</p>
     <p>Da allora, La Stefy è diventata una tappa obbligata per chiunque cerchi panini deliziosi, preparati con ingredienti freschi e di alta qualità. Abbiamo continuato a crescere e a innovare nel corso degli anni, mantenendo sempre fede alla nostra passione per il cibo genuino e gustoso.</p>
 </header>
